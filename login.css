@@ -33,6 +33,42 @@ body {
     overflow: hidden;
 }
 
+/* Estilos para el botón de volver */
+.back-button-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 10001;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+}
+
+.back-button:hover {
+    background: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    color: var(--primary-dark);
+}
+
+.back-button:active {
+    transform: translateY(0);
+}
+
 .login-container {
     display: flex;
     width: 100%;
@@ -142,6 +178,23 @@ body {
 }
 
 .form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(0, 121, 107, 0.1);
+}
+
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: var(--transition);
+    background: #fafafa;
+}
+
+.form-group select:focus {
     outline: none;
     border-color: var(--primary-color);
     background: var(--white);
@@ -342,6 +395,16 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .back-button-container {
+        top: 15px;
+        left: 15px;
+    }
+
+    .back-button {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
     .login-card {
         margin: 20px;
         padding: 30px 25px;
@@ -365,6 +428,16 @@ body {
 }
 
 @media (max-width: 480px) {
+    .back-button-container {
+        top: 10px;
+        left: 10px;
+    }
+
+    .back-button {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
     .login-card {
         margin: 10px;
         padding: 25px 20px;
