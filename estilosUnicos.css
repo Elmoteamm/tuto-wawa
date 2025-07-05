@@ -6,24 +6,8 @@
     box-sizing: border-box;
 }
 
-/* Variables CSS para consistencia */
-:root {
-    --primary-color: #00796b;
-    --primary-dark: #004d40;
-    --primary-light: #4db6ac;
-    --secondary-color: #5151ff;
-    --accent-color: #f9a825;
-    --background-color: #f4f4f4;
-    --text-color: #333;
-    --white: #ffffff;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
-    --border-radius: 8px;
-    --transition: all 0.3s ease;
-}
-
 .CuerpoIndex{
-    background: linear-gradient(135deg, #f4f4f4 0%, #e8f5e8 100%);
+    background-color:#f4f4f4;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
@@ -41,23 +25,17 @@
 .enlace .logo{
     height: 80px;
     width: 100px;
-    transition: var(--transition);
-    border-radius: var(--border-radius);
+    border-radius: 8px;
     cursor: pointer;
 }
 
-.enlace .logo:hover {
-    transform: scale(1.05);
-    box-shadow: var(--shadow);
-}
-
 nav {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background-color: #00796b;
     height: 80px;
     width: 100%;
     border-radius: 0;
     margin-bottom: 20px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -81,19 +59,19 @@ nav ul li{
 nav ul li a{
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
-    color: var(--white);
+    color: #ffffff;
     padding: 10px 16px;
-    border-radius: var(--border-radius);
+    border-radius: 8px;
     text-transform: uppercase;
     font-weight: 500;
-    transition: var(--transition);
     white-space: nowrap;
 }
 
 li a:hover{
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
-    background-color: var(--secondary-color);
+    transform: scale(1.1);
+    transition: all 400ms ease;
+    box-shadow: 0 0 10px 0 rgb(0, 0, 0);
+    background-color: rgb(81, 81, 255);
 }
 
 .boton{
@@ -124,7 +102,7 @@ li a:hover{
         width: 100%;
         height: 100vh;
         position: fixed;
-        background: linear-gradient(135deg, var(--primary-dark), #1a1a1a);
+        background: #2c3e50;
         top: 80px;
         left: -100%;
         text-align: center;
@@ -151,7 +129,7 @@ li a:hover{
     }
 
     li a:hover{
-        background: var(--secondary-color);
+        background: rgb(81, 81, 255);
         transform: scale(1.05);
     }
 
@@ -165,9 +143,9 @@ li a:hover{
     max-width: 800px;
     margin: 20px auto;
     padding: 30px;
-    background: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-hover);
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(0, 121, 107, 0.1);
 }
 
@@ -181,13 +159,9 @@ form {
 
 h2 {
     text-align: center;
-    color: var(--primary-color);
+    color: #00796b;
     margin-bottom: 30px;
     font-size: clamp(1.5rem, 3vw, 2rem);
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .form-group {
@@ -196,7 +170,7 @@ h2 {
 
 label {
     font-size: 16px;
-    color: var(--text-color);
+    color: #333;
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
@@ -207,20 +181,18 @@ input[type="tel"] {
     width: 100%;
     padding: 15px;
     font-size: 14px;
-    border-radius: var(--border-radius);
+    border-radius: 8px;
     border: 2px solid #e0e0e0;
     margin-bottom: 10px;
     background: #fafafa;
-    transition: var(--transition);
 }
 
 input[type="text"]:focus,
 input[type="tel"]:focus {
     outline: none;
-    border-color: var(--primary-color);
-    background: var(--white);
+    border-color: #00796b;
+    background: #ffffff;
     box-shadow: 0 0 0 3px rgba(0, 121, 107, 0.1);
-    transform: translateY(-1px);
 }
 
 /* Estilo para los checkboxes */
@@ -228,7 +200,7 @@ input[type="checkbox"] {
     margin-right: 10px;
     margin-left: 10px;
     transform: scale(1.3);
-    accent-color: var(--primary-color);
+    accent-color: #00796b;
 }
 
 /* Contenedor para los checkboxes */
@@ -236,21 +208,15 @@ input[type="checkbox"] {
     display: inline-flex;
     align-items: center;
     font-size: 16px;
-    color: var(--primary-color);
+    color: #00796b;
     margin-right: 20px;
     margin-bottom: 15px;
     width: calc(50% - 10px);
     box-sizing: border-box;
     padding: 10px;
-    border-radius: var(--border-radius);
+    border-radius: 8px;
     background: rgba(0, 121, 107, 0.05);
-    transition: var(--transition);
     cursor: pointer;
-}
-
-.checkbox-container:hover {
-    background: rgba(0, 121, 107, 0.1);
-    transform: translateY(-2px);
 }
 
 /* Contenedor de todos los checkboxes */
@@ -265,25 +231,17 @@ input[type="checkbox"] {
 /* Botón de envío */
 .button,
 button[type="submit"] {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: var(--white);
+    background: #00796b;
+    color: #ffffff;
     border: none;
     padding: 15px 30px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    border-radius: var(--border-radius);
-    transition: var(--transition);
+    border-radius: 8px;
     width: 100%;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
-}
-
-.button:hover,
-button[type="submit"]:hover {
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-hover);
 }
 
 /* Estilos para la tabla de datos */
@@ -291,10 +249,10 @@ table {
     width: 100%;
     margin: 30px 0;
     border-collapse: collapse;
-    box-shadow: var(--shadow);
-    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     overflow: hidden;
-    background: var(--white);
+    background: #ffffff;
 }
 
 th, td {
@@ -305,8 +263,8 @@ th, td {
 }
 
 thead {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: var(--white);
+    background: #00796b;
+    color: #ffffff;
 }
 
 thead th {
@@ -320,29 +278,16 @@ tbody tr:nth-child(even) {
     background-color: #f8f9fa;
 }
 
-tbody tr:hover {
-    background-color: rgba(0, 121, 107, 0.05);
-    transform: scale(1.01);
-    transition: var(--transition);
-}
-
 /* Estilo para el botón de eliminación */
 button {
     padding: 8px 15px;
-    background: linear-gradient(135deg, #e57373, #d32f2f);
-    border-radius: var(--border-radius);
-    color: var(--white);
+    background: #e57373;
+    border-radius: 8px;
+    color: #ffffff;
     border: none;
     cursor: pointer;
     font-weight: 500;
-    transition: var(--transition);
     font-size: 12px;
-}
-
-button:hover {
-    background: linear-gradient(135deg, #d32f2f, #b71c1c);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
 }
 
 /* Para el script Racha.js*/
@@ -359,12 +304,11 @@ button:hover {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    backdrop-filter: blur(10px);
 }
 
 /* Estilos para la caja que contiene el logo ampliado */
 .overlay-box {
-    background: var(--white);
+    background: #ffffff;
     padding: 40px;
     max-width: 70%;
     max-height: 70%;
@@ -374,19 +318,7 @@ button:hover {
     flex-direction: row;
     align-items: center;
     position: relative;
-    box-shadow: var(--shadow-hover);
-    animation: zoomIn 0.3s ease;
-}
-
-@keyframes zoomIn {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* Estilos para el logo ampliado */
@@ -395,8 +327,8 @@ button:hover {
     height: auto;
     object-fit: contain;
     margin-right: 30px;
-    border-radius: var(--border-radius);
-    border: 3px solid var(--primary-color);
+    border-radius: 8px;
+    border: 3px solid #00796b;
 }
 
 /* Estilos para la información adicional */
@@ -404,7 +336,7 @@ button:hover {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--text-color);
+    color: #333;
     text-align: justify;
     line-height: 1.6;
 }
@@ -523,12 +455,6 @@ button:hover {
     }
 }
 
-/* Mejoras de accesibilidad */
-*:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
@@ -537,22 +463,6 @@ html {
 /* Prevenir overflow horizontal */
 body {
     overflow-x: hidden;
-}
-
-/* Animaciones adicionales */
-.form-container {
-    animation: fadeInUp 0.6s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Mejorar la tabla en dispositivos móviles */
@@ -581,9 +491,9 @@ body {
         border: 1px solid #ccc;
         margin-bottom: 10px;
         padding: 10px;
-        border-radius: var(--border-radius);
-        background: var(--white);
-        box-shadow: var(--shadow);
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     
     table td {
@@ -602,7 +512,7 @@ body {
         padding-right: 10px;
         white-space: nowrap;
         font-weight: bold;
-        color: var(--primary-color);
+        color: #00796b;
     }
 }
 

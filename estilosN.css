@@ -10,9 +10,10 @@ body {
 }
 
 nav {
-    background-color: #2fcdcd;
+    background-color: #00796b;
     height: 80px;
-    border-radius: 5px;
+    border-radius: 0;
+    margin-bottom: 20px;
 }
 
 nav ul {
@@ -33,7 +34,6 @@ nav ul li a {
     padding: 7px 14px;
     border-radius: 4px;
     text-transform: uppercase;
-    transition: all 400ms ease;
 }
 
 nav ul li a:hover {
@@ -110,11 +110,6 @@ form input[type="submit"] {
     cursor: pointer;
     font-size: 16px;
     border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-form input[type="submit"]:hover {
-    background-color: #c6a700;
 }
 
 @media (max-width: 768px) {
