@@ -1,0 +1,674 @@
+/* Variables CSS para consistencia */
+:root {
+    --primary-color: #00796b;
+    --primary-dark: #004d40;
+    --primary-light: #4db6ac;
+    --secondary-color: #5151ff;
+    --accent-color: #f9a825;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f4f4f4 0%, #e8f5e8 100%);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navegación mejorada */
+nav {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    padding: 15px 20px;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+nav a::before {
+    content: '←';
+    font-size: 18px;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 30px;
+    background: var(--white);
+    box-shadow: var(--shadow-hover);
+    border-radius: var(--border-radius);
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+}
+
+/* Títulos mejorados */
+h1, h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+/* Botón para agregar cursos mejorado */
+#addCourseBtn {
+    display: block;
+    margin: 30px auto;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+}
+
+#addCourseBtn::before {
+    content: '+ ';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#addCourseBtn:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+#addCourseBtn:active {
+    transform: translateY(-1px);
+}
+
+#addCourseBtn a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Grid de cursos mejorado */
+#coursesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+    padding: 0 10px;
+}
+
+/* Tarjetas de cursos mejoradas */
+.course-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    border: 1px solid rgba(0, 121, 107, 0.1);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-light);
+}
+
+.course-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.course-card:hover img {
+    transform: scale(1.05);
+}
+
+.course-card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.course-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+/* Información adicional del curso */
+.course-info {
+    margin: 15px 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.course-info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+/* Botones de las tarjetas */
+.course-card-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.course-card button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card button:nth-child(1) {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+}
+
+.course-card button:nth-child(2) {
+    background: linear-gradient(135deg, var(--secondary-color), #3f3fff);
+    color: var(--white);
+}
+
+.course-card button:nth-child(3) {
+    background: linear-gradient(135deg, #e57373, #d32f2f);
+    color: var(--white);
+}
+
+.course-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.course-card button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: var(--transition);
+}
+
+.course-card button:hover::before {
+    left: 100%;
+}
+
+/* Modal mejorado */
+#materialsModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-hover);
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+}
+
+/* Tarjetas de materiales */
+.material-card {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.material-card:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.material-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.material-card p {
+    margin: 8px 0;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.material-card a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 20px;
+    transition: var(--transition);
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.material-card a:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Botón de eliminar material */
+.material-card .delete-btn {
+    background: linear-gradient(135deg, #e57373, #d32f2f);
+    color: var(--white);
+    padding: 6px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    border: none;
+    transition: var(--transition);
+    margin-left: 10px;
+    font-size: 11px;
+}
+
+.material-card .delete-btn:hover {
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Botón de cerrar modal */
+.modal-content button[onclick="closeMaterialsModal()"] {
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: var(--white);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 20px;
+    transition: var(--transition);
+}
+
+.modal-content button[onclick="closeMaterialsModal()"]:hover {
+    background: linear-gradient(135deg, #495057, #343a40);
+    transform: translateY(-2px);
+}
+
+/* Estilos para tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+table th {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+table td {
+    font-size: 13px;
+    color: var(--text-color);
+}
+
+table tbody tr:hover {
+    background: rgba(0, 121, 107, 0.05);
+}
+
+/* Estados vacíos */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+.empty-state h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.empty-state p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+/* Responsividad mejorada */
+@media (max-width: 1200px) {
+    .container {
+        margin: 15px;
+        padding: 25px;
+    }
+    
+    #coursesContainer {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    #coursesContainer {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 0;
+    }
+
+    .course-card-buttons {
+        flex-direction: column;
+    }
+
+    #addCourseBtn {
+        width: 100%;
+        margin: 20px 0;
+        padding: 12px 25px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    nav a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 5px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #coursesContainer {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .course-card {
+        min-height: 350px;
+    }
+
+    .course-card-content {
+        padding: 15px;
+    }
+
+    .course-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .course-card button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .modal-content {
+        padding: 15px;
+        width: 98%;
+        margin: 10px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .material-card {
+        padding: 15px;
+    }
+
+    .course-info-row {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .course-info-row span {
+        font-size: 11px;
+    }
+}
+
+/* Animaciones adicionales */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.course-card {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.course-card:nth-child(1) { animation-delay: 0.1s; }
+.course-card:nth-child(2) { animation-delay: 0.2s; }
+.course-card:nth-child(3) { animation-delay: 0.3s; }
+.course-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Loading state */
+.loading-card {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Mejoras de accesibilidad */
+*:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+button:focus,
+a:focus {
+    outline: 2px solid var(--accent-color);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Prevenir overflow horizontal */
+body {
+    overflow-x: hidden;
+}
+
+/* Asegurar que las tarjetas mantengan su tamaño mínimo */
+.course-card {
+    min-width: 0; /* Permite que flex-shrink funcione */
+}
+
+/* Mejorar la distribución en pantallas muy pequeñas */
+@media (max-width: 320px) {
+    .container {
+        padding: 10px;
+    }
+    
+    #coursesContainer {
+        gap: 10px;
+    }
+    
+    .course-card {
+        min-height: 320px;
+    }
+    
+    .course-card-content {
+        padding: 12px;
+    }
+    
+    .course-card button {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+}
