@@ -1,59 +1,36 @@
-/* Variables CSS para consistencia */
-:root {
-    --primary-color: #00796b;
-    --primary-dark: #004d40;
-    --primary-light: #4db6ac;
-    --secondary-color: #5151ff;
-    --accent-color: #f9a825;
-    --background-color: #f4f4f4;
-    --text-color: #333;
-    --white: #ffffff;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
-    --border-radius: 8px;
-    --transition: all 0.3s ease;
-}
-
-/* Estilos generales para el cuerpo */
-body {
-    background: linear-gradient(135deg, #f4f4f4 0%, #e8f5e8 100%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-color);
+* {
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    min-height: 100vh;
-    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
-/* Navegación */
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
 nav {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background-color: #00796b;
     padding: 15px 20px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px);
 }
 
 nav a {
-    color: var(--white);
+    color: #ffffff;
     text-decoration: none;
     font-weight: 600;
     font-size: 16px;
     padding: 10px 20px;
     border-radius: 25px;
-    transition: var(--transition);
     display: inline-flex;
     align-items: center;
     gap: 8px;
-}
-
-nav a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
 }
 
 nav a::before {
@@ -61,14 +38,13 @@ nav a::before {
     font-size: 18px;
 }
 
-/* Contenedor principal */
 .container {
     max-width: 1000px;
     margin: 20px auto;
     padding: 30px;
-    background: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-hover);
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     position: relative;
     overflow: hidden;
 }
@@ -80,24 +56,19 @@ nav a::before {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    background: linear-gradient(90deg, #00796b, #5151ff, #f9a825);
 }
 
-/* Títulos */
 h1, h2 {
     text-align: center;
-    color: var(--primary-color);
+    color: #00796b;
     font-weight: 700;
     margin-bottom: 30px;
     position: relative;
 }
 
 h1 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 2.5rem;
 }
 
 h1::after {
@@ -108,11 +79,10 @@ h1::after {
     transform: translateX(-50%);
     width: 100px;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(90deg, #00796b, #f9a825);
     border-radius: 2px;
 }
 
-/* Formularios */
 form {
     margin-bottom: 40px;
     padding: 0;
@@ -129,29 +99,26 @@ label {
     display: block;
     font-weight: 600;
     margin-bottom: 8px;
-    color: var(--text-color);
+    color: #333;
     font-size: 16px;
 }
 
-/* Estilos para inputs, selects, y botones */
 input, select, textarea, button {
     width: 100%;
     padding: 15px;
     font-size: 14px;
-    border-radius: var(--border-radius);
+    border-radius: 8px;
     border: 2px solid #e0e0e0;
     margin-top: 5px;
     background: #fafafa;
-    transition: var(--transition);
     box-sizing: border-box;
 }
 
 input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: var(--primary-color);
-    background: var(--white);
+    border-color: #00796b;
+    background: #ffffff;
     box-shadow: 0 0 0 3px rgba(0, 121, 107, 0.1);
-    transform: translateY(-1px);
 }
 
 textarea {
@@ -160,38 +127,30 @@ textarea {
 }
 
 button {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: var(--white);
+    background: linear-gradient(135deg, #00796b, #004d40);
+    color: #ffffff;
     border: none;
     cursor: pointer;
     font-weight: 600;
     font-size: 16px;
-    transition: var(--transition);
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
 
-button:hover {
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-hover);
-}
-
-/* Estilos para la tabla de materiales */
 .table-container {
     overflow-x: auto;
     margin-top: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    background: var(--white);
-    border-radius: var(--border-radius);
+    background: #ffffff;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
@@ -201,55 +160,35 @@ th, td {
 }
 
 th {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: var(--white);
+    background: linear-gradient(135deg, #00796b, #004d40);
+    color: #ffffff;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-size: 13px;
 }
 
-/* Estilos para filas alternadas en la tabla */
 tr:nth-child(even) {
     background-color: #f8f9fa;
 }
 
-tr:hover {
-    background-color: rgba(0, 121, 107, 0.05);
-    transform: scale(1.01);
-    transition: var(--transition);
-}
-
-/* Estilos de los botones dentro de la tabla */
 table button {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: var(--white);
+    background: linear-gradient(135deg, #00796b, #004d40);
+    color: #ffffff;
     padding: 8px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: var(--transition);
     font-size: 12px;
     font-weight: 500;
     width: auto;
     margin: 2px;
 }
 
-table button:hover {
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
-}
-
 table .delete-btn {
     background: linear-gradient(135deg, #e57373, #d32f2f);
 }
 
-table .delete-btn:hover {
-    background: linear-gradient(135deg, #d32f2f, #b71c1c);
-}
-
-/* Mejoras para la interfaz en dispositivos móviles */
 @media (max-width: 768px) {
     .container {
         margin: 15px;
@@ -261,7 +200,6 @@ table .delete-btn:hover {
         margin-bottom: 20px;
     }
 
-    /* Ajustar el tamaño de las celdas de la tabla */
     th, td {
         padding: 10px 8px;
         font-size: 13px;
@@ -282,7 +220,6 @@ table .delete-btn:hover {
         font-size: 14px;
     }
 
-    /* Hacer la tabla responsive */
     table {
         display: block;
         overflow-x: auto;
@@ -307,9 +244,9 @@ table .delete-btn:hover {
         border: 1px solid #ccc;
         margin-bottom: 10px;
         padding: 15px;
-        border-radius: var(--border-radius);
-        background: var(--white);
-        box-shadow: var(--shadow);
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     
     table td {
@@ -330,7 +267,7 @@ table .delete-btn:hover {
         padding-right: 10px;
         white-space: nowrap;
         font-weight: bold;
-        color: var(--primary-color);
+        color: #00796b;
     }
 }
 
@@ -344,7 +281,6 @@ table .delete-btn:hover {
         font-size: 1.5rem;
     }
 
-    /* Estilos adicionales para pantallas más pequeñas */
     form {
         margin-bottom: 25px;
     }
@@ -365,64 +301,14 @@ table .delete-btn:hover {
     }
 }
 
-/* Animaciones adicionales */
-.container {
-    animation: fadeInUp 0.6s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.form-group {
-    animation: fadeInUp 0.6s ease-out;
-    animation-fill-mode: both;
-}
-
-.form-group:nth-child(1) { animation-delay: 0.1s; }
-.form-group:nth-child(2) { animation-delay: 0.2s; }
-.form-group:nth-child(3) { animation-delay: 0.3s; }
-.form-group:nth-child(4) { animation-delay: 0.4s; }
-
-/* Mejoras de accesibilidad */
-*:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
-/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* Prevenir overflow horizontal */
 body {
     overflow-x: hidden;
 }
 
-/* Estados de carga */
-.loading {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(255,255,255,.3);
-    border-radius: 50%;
-    border-top-color: var(--white);
-    animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-/* Asegurar que los elementos mantengan su estructura */
 .form-group,
 table,
 .container {
